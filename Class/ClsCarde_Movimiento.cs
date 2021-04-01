@@ -8,6 +8,7 @@ namespace DataLayer.Class
     {
         public String   aEMPRESA;
         public String   aSUCURSAL;
+        public String   aUSUARIO;
         public Int32    aMOVIMIENTO;
         public Int32    aINVENTARIO;
         public String   aTIPO;
@@ -20,6 +21,7 @@ namespace DataLayer.Class
         {
             this.aEMPRESA = "";
             this.aSUCURSAL = "";
+            this.aUSUARIO = "";
             this.aMOVIMIENTO = 0;
             this.aINVENTARIO = 0;
             this.aTIPO = "";
@@ -29,10 +31,11 @@ namespace DataLayer.Class
            
         }
 
-        public ClsCarde_Movimiento(String pEMPRESA, String pSUCURSAL, Int32 pMOVIMIENTO , Int32 pINVENTARIO, String pTIPO, Int32 pCANTIDAD_EXISTENTE, Int32 pCANTIDAD, DateTime pFECHA_HORA)
+        public ClsCarde_Movimiento(String pEMPRESA, String pSUCURSAL, String pUSUARIO, Int32 pMOVIMIENTO , Int32 pINVENTARIO, String pTIPO, Int32 pCANTIDAD_EXISTENTE, Int32 pCANTIDAD, DateTime pFECHA_HORA)
         {
             this.aEMPRESA = pEMPRESA;
             this.aSUCURSAL = pSUCURSAL;
+            this.aUSUARIO = pUSUARIO;
             this.aMOVIMIENTO = pMOVIMIENTO;
             this.aINVENTARIO = pINVENTARIO;
             this.aTIPO = pTIPO;
@@ -55,6 +58,7 @@ namespace DataLayer.Class
                 Cmd.CommandType = CommandType.StoredProcedure;
                 Cmd.Parameters.Add(new OracleParameter("p_empresa", OracleDbType.Varchar2)).Value = carde_Movimiento.aEMPRESA;
                 Cmd.Parameters.Add(new OracleParameter("p_sucursal", OracleDbType.Varchar2)).Value = carde_Movimiento.aSUCURSAL;
+                Cmd.Parameters.Add(new OracleParameter("p_usuario", OracleDbType.Varchar2)).Value = carde_Movimiento.aUSUARIO;
                 Cmd.Parameters.Add(new OracleParameter("p_movimiento", OracleDbType.Int32)).Value = carde_Movimiento.aMOVIMIENTO;
                 Cmd.Parameters.Add(new OracleParameter("p_inventario", OracleDbType.Int32)).Value = carde_Movimiento.aINVENTARIO;
                 Cmd.Parameters.Add(new OracleParameter("p_tipo", OracleDbType.Varchar2)).Value = carde_Movimiento.aTIPO;
@@ -92,6 +96,7 @@ namespace DataLayer.Class
                 Cmd.CommandType = CommandType.StoredProcedure;
                 Cmd.Parameters.Add(new OracleParameter("p_empresa", OracleDbType.Varchar2)).Value = carde_Movimiento.aEMPRESA;
                 Cmd.Parameters.Add(new OracleParameter("p_sucursal", OracleDbType.Varchar2)).Value = carde_Movimiento.aSUCURSAL;
+                Cmd.Parameters.Add(new OracleParameter("p_usuario", OracleDbType.Varchar2)).Value = carde_Movimiento.aUSUARIO;
                 Cmd.Parameters.Add(new OracleParameter("p_movimiento", OracleDbType.Int32)).Value = carde_Movimiento.aMOVIMIENTO;
                 Cmd.Parameters.Add(new OracleParameter("p_inventario", OracleDbType.Int32)).Value = carde_Movimiento.aINVENTARIO;
                 Cmd.Parameters.Add(new OracleParameter("p_tipo", OracleDbType.Varchar2)).Value = carde_Movimiento.aTIPO;
