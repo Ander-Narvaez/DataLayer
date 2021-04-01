@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\ClsArticulo.cs" />
+    <Compile Include="Class\ClsArticulo_Inventario.cs" />
     <Compile Include="Class\ClsCategoria_Articulo.cs" />
     <Compile Include="Class\ClsConexion.cs" />
     <Compile Include="Class\ClsEmpresa.cs" />
