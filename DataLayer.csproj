@@ -52,6 +52,7 @@
     <Compile Include="Class\ClsClientes.cs" />
     <Compile Include="Class\ClsConexion.cs" />
     <Compile Include="Class\ClsEmpresa.cs" />
+    <Compile Include="Class\ClsProveedores.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
