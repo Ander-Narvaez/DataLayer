@@ -48,6 +48,7 @@
     <Compile Include="Class\ClsArticulo.cs" />
     <Compile Include="Class\ClsArticulo_Inventario.cs" />
     <Compile Include="Class\ClsBodega.cs" />
+    <Compile Include="Class\ClsCarde_Movimiento.cs" />
     <Compile Include="Class\ClsCategoria_Articulo.cs" />
     <Compile Include="Class\ClsClientes.cs" />
     <Compile Include="Class\ClsConexion.cs" />
