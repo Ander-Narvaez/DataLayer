@@ -75,7 +75,7 @@ namespace DataLayer.Class
                 Cmd.Connection = conexion;
                 Cmd.CommandText = "package_supermercados.stp_mantenimiento_empresa";
                 Cmd.CommandType = CommandType.StoredProcedure;
-                Cmd.Parameters.Add(new OracleParameter("p_id_compañia", OracleDbType.Varchar2)).Value = empresa.aEMPRESA;
+                Cmd.Parameters.Add(new OracleParameter("p_empresa", OracleDbType.Varchar2)).Value = empresa.aEMPRESA;
                 Cmd.Parameters.Add(new OracleParameter("p_nombre", OracleDbType.Varchar2)).Value = empresa.aNOMBRE;
                 Cmd.Parameters.Add(new OracleParameter("p_ubicacion", OracleDbType.Varchar2)).Value = empresa.aUBICACION;
                 Cmd.Parameters.Add(new OracleParameter("p_email", OracleDbType.Varchar2)).Value = empresa.aEMAIL;
