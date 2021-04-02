@@ -4,7 +4,7 @@ using Oracle.ManagedDataAccess.Client;
 
 namespace DataLayer.Class
 {
-    public class ClsArticulo_Inventario : ClsConexion
+    public class ClsInventario : ClsConexion
     {
         public String aEMPRESA;
         public String aSUCURSAL;
@@ -15,7 +15,7 @@ namespace DataLayer.Class
         public int aMINIMOS;
         public int aEXISTENCIAS;
 
-        public ClsArticulo_Inventario()
+        public ClsInventario()
         {
             this.aEMPRESA = "";
             this.aSUCURSAL = "";
@@ -27,7 +27,7 @@ namespace DataLayer.Class
             this.aEXISTENCIAS = 0;
         }
 
-        public ClsArticulo_Inventario(string pEMPRESA, String pSUCURSAL, String pPROVEEDOR, int pINVENTARIO, String pARTICULO, int pMAXIMOS, int pMINIMOS, int pEXISTENCIAS)
+        public ClsInventario(string pEMPRESA, String pSUCURSAL, String pPROVEEDOR, int pINVENTARIO, String pARTICULO, int pMAXIMOS, int pMINIMOS, int pEXISTENCIAS)
         {
             this.aEMPRESA = pEMPRESA;
             this.aSUCURSAL = pSUCURSAL;
@@ -39,7 +39,7 @@ namespace DataLayer.Class
             this.aEXISTENCIAS = pEXISTENCIAS;
         }
 
-        public String MaintenanceArticulo_Inventario(ClsArticulo_Inventario articulo_Inventario, String pACCION)
+        public String MaintenanceArticulo_Inventario(ClsInventario articulo_Inventario, String pACCION)
         {
             String Menssage = "";
             try
@@ -74,7 +74,7 @@ namespace DataLayer.Class
             return Menssage;
         }
 
-        public DataSet GetListArticulo_Inventario(ClsArticulo_Inventario articulo_Inventario, String pACCION)
+        public DataSet GetListArticulo_Inventario(ClsInventario articulo_Inventario, String pACCION)
         {
             DataSet DtsArticulo_Inventario = new DataSet();
 
