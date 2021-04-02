@@ -39,7 +39,7 @@ namespace DataLayer.Class
             this.aEXISTENCIAS = pEXISTENCIAS;
         }
 
-        public String MaintenanceArticulo_Inventario(ClsInventario articulo_Inventario, String pACCION)
+        public String MaintenanceInventario(ClsInventario inventario, String pACCION)
         {
             String Menssage = "";
             try
@@ -48,16 +48,16 @@ namespace DataLayer.Class
                 Cmd = new OracleCommand();
                 Cmd.Connection = conexion;
                 AbrirBaseDatos();
-                Cmd.CommandText = "package_supermercados.stp_mantenimiento_articulo_inventario";
+                Cmd.CommandText = "package_supermercados.stp_mantenimiento_inventario";
                 Cmd.CommandType = CommandType.StoredProcedure;
-                Cmd.Parameters.Add(new OracleParameter("p_empresa", OracleDbType.Varchar2)).Value = articulo_Inventario.aEMPRESA;
-                Cmd.Parameters.Add(new OracleParameter("p_sucursal", OracleDbType.Varchar2)).Value = articulo_Inventario.aSUCURSAL;
-                Cmd.Parameters.Add(new OracleParameter("p_proveedor", OracleDbType.Varchar2)).Value = articulo_Inventario.aPROVEEDOR;
-                Cmd.Parameters.Add(new OracleParameter("p_inventario", OracleDbType.Int32)).Value = articulo_Inventario.aINVENTARIO;
-                Cmd.Parameters.Add(new OracleParameter("p_articulo", OracleDbType.Varchar2)).Value = articulo_Inventario.aARTICULO;
-                Cmd.Parameters.Add(new OracleParameter("p_maximos", OracleDbType.Int32)).Value = articulo_Inventario.aMAXIMOS;
-                Cmd.Parameters.Add(new OracleParameter("p_minimos", OracleDbType.Int32)).Value = articulo_Inventario.aMINIMOS;
-                Cmd.Parameters.Add(new OracleParameter("p_existencias", OracleDbType.Int32)).Value = articulo_Inventario.aEXISTENCIAS;
+                Cmd.Parameters.Add(new OracleParameter("p_empresa", OracleDbType.Varchar2)).Value = inventario.aEMPRESA;
+                Cmd.Parameters.Add(new OracleParameter("p_sucursal", OracleDbType.Varchar2)).Value = inventario.aSUCURSAL;
+                Cmd.Parameters.Add(new OracleParameter("p_proveedor", OracleDbType.Varchar2)).Value = inventario.aPROVEEDOR;
+                Cmd.Parameters.Add(new OracleParameter("p_inventario", OracleDbType.Int32)).Value = inventario.aINVENTARIO;
+                Cmd.Parameters.Add(new OracleParameter("p_articulo", OracleDbType.Varchar2)).Value = inventario.aARTICULO;
+                Cmd.Parameters.Add(new OracleParameter("p_maximos", OracleDbType.Int32)).Value = inventario.aMAXIMOS;
+                Cmd.Parameters.Add(new OracleParameter("p_minimos", OracleDbType.Int32)).Value = inventario.aMINIMOS;
+                Cmd.Parameters.Add(new OracleParameter("p_existencias", OracleDbType.Int32)).Value = inventario.aEXISTENCIAS;
                 Cmd.Parameters.Add(new OracleParameter("p_accion", OracleDbType.Varchar2)).Value = pACCION;
                 Cmd.Parameters.Add(new OracleParameter("p_recordset", OracleDbType.RefCursor)).Direction = ParameterDirection.Output;
                 Cmd.ExecuteNonQuery();
@@ -74,31 +74,31 @@ namespace DataLayer.Class
             return Menssage;
         }
 
-        public DataSet GetListArticulo_Inventario(ClsInventario articulo_Inventario, String pACCION)
+        public DataSet GetListInventario(ClsInventario inventario, String pACCION)
         {
-            DataSet DtsArticulo_Inventario = new DataSet();
+            DataSet DtsInventario = new DataSet();
 
             try
             {
                 AbrirBaseDatos();
-                DtsArticulo_Inventario.Clear();
-                DtsArticulo_Inventario.EnforceConstraints = false;
+                DtsInventario.Clear();
+                DtsInventario.EnforceConstraints = false;
                 Cmd = new OracleCommand();
                 Cmd.Connection = conexion;
-                Cmd.CommandText = "package_supermercados.stp_mantenimiento_articulo_inventario";
+                Cmd.CommandText = "package_supermercados.stp_mantenimiento_inventario";
                 Cmd.CommandType = CommandType.StoredProcedure;
-                Cmd.Parameters.Add(new OracleParameter("p_empresa", OracleDbType.Varchar2)).Value = articulo_Inventario.aEMPRESA;
-                Cmd.Parameters.Add(new OracleParameter("p_sucursal", OracleDbType.Varchar2)).Value = articulo_Inventario.aSUCURSAL;
-                Cmd.Parameters.Add(new OracleParameter("p_proveedor", OracleDbType.Varchar2)).Value = articulo_Inventario.aPROVEEDOR;
-                Cmd.Parameters.Add(new OracleParameter("p_inventario", OracleDbType.Int32)).Value = articulo_Inventario.aINVENTARIO;
-                Cmd.Parameters.Add(new OracleParameter("p_articulo", OracleDbType.Varchar2)).Value = articulo_Inventario.aARTICULO;
-                Cmd.Parameters.Add(new OracleParameter("p_maximos", OracleDbType.Int32)).Value = articulo_Inventario.aMAXIMOS;
-                Cmd.Parameters.Add(new OracleParameter("p_minimos", OracleDbType.Int32)).Value = articulo_Inventario.aMINIMOS;
-                Cmd.Parameters.Add(new OracleParameter("p_existencias", OracleDbType.Int32)).Value = articulo_Inventario.aEXISTENCIAS;
+                Cmd.Parameters.Add(new OracleParameter("p_empresa", OracleDbType.Varchar2)).Value = inventario.aEMPRESA;
+                Cmd.Parameters.Add(new OracleParameter("p_sucursal", OracleDbType.Varchar2)).Value = inventario.aSUCURSAL;
+                Cmd.Parameters.Add(new OracleParameter("p_proveedor", OracleDbType.Varchar2)).Value = inventario.aPROVEEDOR;
+                Cmd.Parameters.Add(new OracleParameter("p_inventario", OracleDbType.Int32)).Value = inventario.aINVENTARIO;
+                Cmd.Parameters.Add(new OracleParameter("p_articulo", OracleDbType.Varchar2)).Value = inventario.aARTICULO;
+                Cmd.Parameters.Add(new OracleParameter("p_maximos", OracleDbType.Int32)).Value = inventario.aMAXIMOS;
+                Cmd.Parameters.Add(new OracleParameter("p_minimos", OracleDbType.Int32)).Value = inventario.aMINIMOS;
+                Cmd.Parameters.Add(new OracleParameter("p_existencias", OracleDbType.Int32)).Value = inventario.aEXISTENCIAS;
                 Cmd.Parameters.Add(new OracleParameter("p_accion", OracleDbType.Varchar2)).Value = pACCION;
                 Cmd.Parameters.Add(new OracleParameter("p_recordset", OracleDbType.RefCursor)).Direction = ParameterDirection.Output;
                 OracleDataAdapter DataAdapter = new OracleDataAdapter(Cmd);
-                DataAdapter.Fill(DtsArticulo_Inventario);
+                DataAdapter.Fill(DtsInventario);
                 cerrar_base();
 
             }
@@ -107,7 +107,7 @@ namespace DataLayer.Class
                 cerrar_base();
                 throw new Exception(Ex.Message);
             }
-            return DtsArticulo_Inventario;
+            return DtsInventario;
         }
     }
 }
