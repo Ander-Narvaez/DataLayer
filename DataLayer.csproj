@@ -55,6 +55,7 @@
     <Compile Include="Class\ClsDetalle_Factura.cs" />
     <Compile Include="Class\ClsEmpleados.cs" />
     <Compile Include="Class\ClsEmpresa.cs" />
+    <Compile Include="Class\ClsEstante.cs" />
     <Compile Include="Class\ClsFactura.cs" />
     <Compile Include="Class\ClsProveedores.cs" />
     <Compile Include="Class\ClsUsuarios.cs" />
