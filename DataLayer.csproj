@@ -46,7 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\ClsArticulo.cs" />
-    <Compile Include="Class\ClsArticulo_Inventario.cs" />
+    <Compile Include="Class\ClsInventario.cs" />
     <Compile Include="Class\ClsBodega.cs" />
     <Compile Include="Class\ClsCategoria_Articulo.cs" />
     <Compile Include="Class\ClsClientes.cs" />
@@ -56,6 +56,7 @@
     <Compile Include="Class\ClsEmpresa.cs" />
     <Compile Include="Class\ClsFactura.cs" />
     <Compile Include="Class\ClsProveedores.cs" />
+    <Compile Include="Class\ClsSeccion.cs" />
     <Compile Include="Class\ClsUsuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
