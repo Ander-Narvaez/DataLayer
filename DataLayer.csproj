@@ -59,6 +59,7 @@
     <Compile Include="Class\ClsFactura.cs" />
     <Compile Include="Class\ClsProveedores.cs" />
     <Compile Include="Class\ClsSeccion.cs" />
+    <Compile Include="Class\ClsSucursal.cs" />
     <Compile Include="Class\ClsUsuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
