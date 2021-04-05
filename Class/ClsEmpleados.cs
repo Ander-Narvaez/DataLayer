@@ -12,7 +12,7 @@ namespace DataLayer.Class
         public String aNOMBRE;
         public String aAPELLIDOS;
         public String aEMAIL;
-        public int aTELEFONO;
+        public String aTELEFONO;
 
         public ClsEmpleados()
         {
@@ -22,10 +22,10 @@ namespace DataLayer.Class
             this.aNOMBRE = "";
             this.aAPELLIDOS = "";
             this.aEMAIL = "";
-            this.aTELEFONO = 0;
+            this.aTELEFONO = "";
         }
 
-        public ClsEmpleados(string pEMPRESA, String pSUCURSAL, String pCEDULA, String pNOMBRE, String pAPELLIDOS, String pEMAIL, int pTELEFONO)
+        public ClsEmpleados(string pEMPRESA, String pSUCURSAL, String pCEDULA, String pNOMBRE, String pAPELLIDOS, String pEMAIL, String pTELEFONO)
         {
             this.aEMPRESA = pEMPRESA;
             this.aSUCURSAL = pSUCURSAL;
@@ -53,7 +53,7 @@ namespace DataLayer.Class
                 Cmd.Parameters.Add(new OracleParameter("p_nombre", OracleDbType.Varchar2)).Value = empleados.aNOMBRE;
                 Cmd.Parameters.Add(new OracleParameter("p_apellidos", OracleDbType.Varchar2)).Value = empleados.aAPELLIDOS;
                 Cmd.Parameters.Add(new OracleParameter("p_email", OracleDbType.Varchar2)).Value = empleados.aEMAIL;
-                Cmd.Parameters.Add(new OracleParameter("p_telefono", OracleDbType.Int32)).Value = empleados.aTELEFONO;
+                Cmd.Parameters.Add(new OracleParameter("p_telefono", OracleDbType.Varchar2)).Value = empleados.aTELEFONO;
                 Cmd.Parameters.Add(new OracleParameter("p_accion", OracleDbType.Varchar2)).Value = pACCION;
                 Cmd.Parameters.Add(new OracleParameter("p_recordset", OracleDbType.RefCursor)).Direction = ParameterDirection.Output;
                 Cmd.ExecuteNonQuery();
@@ -89,7 +89,7 @@ namespace DataLayer.Class
                 Cmd.Parameters.Add(new OracleParameter("p_nombre", OracleDbType.Varchar2)).Value = empleados.aNOMBRE;
                 Cmd.Parameters.Add(new OracleParameter("p_apellidos", OracleDbType.Varchar2)).Value = empleados.aAPELLIDOS;
                 Cmd.Parameters.Add(new OracleParameter("p_email", OracleDbType.Varchar2)).Value = empleados.aEMAIL;
-                Cmd.Parameters.Add(new OracleParameter("p_telefono", OracleDbType.Int32)).Value = empleados.aTELEFONO;
+                Cmd.Parameters.Add(new OracleParameter("p_telefono", OracleDbType.Varchar2)).Value = empleados.aTELEFONO;
                 Cmd.Parameters.Add(new OracleParameter("p_accion", OracleDbType.Varchar2)).Value = pACCION;
                 Cmd.Parameters.Add(new OracleParameter("p_recordset", OracleDbType.RefCursor)).Direction = ParameterDirection.Output;
                 OracleDataAdapter DataAdapter = new OracleDataAdapter(Cmd);
