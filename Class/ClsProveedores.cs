@@ -6,8 +6,8 @@ namespace DataLayer.Class
 {
     public class ClsProveedores : ClsConexion
     {
-        public String aID_EMPRESA;
-        public String aID_SUCURSAL;
+        public String aEMPRESA;
+        public String aSUCURSAL;
         public String aCEDULA_JURIDICA;
         public String aRAZON_SOCIAL;
         public String aUBICACION;
@@ -16,8 +16,8 @@ namespace DataLayer.Class
 
         public ClsProveedores()
         {
-            this.aID_EMPRESA = "";
-            this.aID_SUCURSAL = "";
+            this.aEMPRESA = "";
+            this.aSUCURSAL = "";
             this.aCEDULA_JURIDICA = "";
             this.aRAZON_SOCIAL = "";
             this.aUBICACION = "";
@@ -25,10 +25,10 @@ namespace DataLayer.Class
             this.aTELEFONO = "";
         }
 
-        public ClsProveedores(string pID_EMPRESA, String pID_SUCURSAL, String pCEDULA_JURIDICA, String pRAZON_SOCIAL, String pUBICACION, String pEMAIL, String pTELEFONO)
+        public ClsProveedores(string pEMPRESA, String pSUCURSAL, String pCEDULA_JURIDICA, String pRAZON_SOCIAL, String pUBICACION, String pEMAIL, String pTELEFONO)
         {
-            this.aID_EMPRESA = pID_EMPRESA;
-            this.aID_SUCURSAL = pID_SUCURSAL;
+            this.aEMPRESA = pEMPRESA;
+            this.aSUCURSAL = pSUCURSAL;
             this.aCEDULA_JURIDICA = pCEDULA_JURIDICA;
             this.aRAZON_SOCIAL = pRAZON_SOCIAL;
             this.aUBICACION = pUBICACION;
@@ -47,8 +47,8 @@ namespace DataLayer.Class
                 AbrirBaseDatos();
                 Cmd.CommandText = "package_supermercados.stp_mantenimiento_proveedores";
                 Cmd.CommandType = CommandType.StoredProcedure;
-                Cmd.Parameters.Add(new OracleParameter("p_id_empresa", OracleDbType.Varchar2)).Value = proveedores.aID_EMPRESA;
-                Cmd.Parameters.Add(new OracleParameter("p_id_sucursal", OracleDbType.Varchar2)).Value = proveedores.aID_SUCURSAL;
+                Cmd.Parameters.Add(new OracleParameter("p_empresa", OracleDbType.Varchar2)).Value = proveedores.aEMPRESA;
+                Cmd.Parameters.Add(new OracleParameter("p_sucursal", OracleDbType.Varchar2)).Value = proveedores.aSUCURSAL;
                 Cmd.Parameters.Add(new OracleParameter("p_cedula_juridica", OracleDbType.Varchar2)).Value = proveedores.aCEDULA_JURIDICA;
                 Cmd.Parameters.Add(new OracleParameter("p_razon_social", OracleDbType.Varchar2)).Value = proveedores.aRAZON_SOCIAL;
                 Cmd.Parameters.Add(new OracleParameter("p_ubicacion", OracleDbType.Varchar2)).Value = proveedores.aUBICACION;
@@ -83,8 +83,10 @@ namespace DataLayer.Class
                 Cmd.Connection = conexion;
                 Cmd.CommandText = "package_supermercados.stp_mantenimiento_proveedores";
                 Cmd.CommandType = CommandType.StoredProcedure;
-                Cmd.Parameters.Add(new OracleParameter("p_id_empresa", OracleDbType.Varchar2)).Value = proveedores.aID_EMPRESA;
-                Cmd.Parameters.Add(new OracleParameter("p_id_sucursal", OracleDbType.Varchar2)).Value = proveedores.aID_SUCURSAL;
+                Cmd.Parameters.Add(new OracleParameter("p_empresa", OracleDbType.Varchar2)).Value = proveedores.aEMPRESA;
+                Cmd.Parameters.Add(new OracleParameter("p_sucursal", OracleDbType.Varchar2)).Value = proveedores.aSUCURSAL;
+                Cmd.Parameters.Add(new OracleParameter("p_cedula_juridica", OracleDbType.Varchar2)).Value = proveedores.aCEDULA_JURIDICA;
+                Cmd.Parameters.Add(new OracleParameter("p_razon_social", OracleDbType.Varchar2)).Value = proveedores.aRAZON_SOCIAL;
                 Cmd.Parameters.Add(new OracleParameter("p_ubicacion", OracleDbType.Varchar2)).Value = proveedores.aUBICACION;
                 Cmd.Parameters.Add(new OracleParameter("p_email", OracleDbType.Varchar2)).Value = proveedores.aEMAIL;
                 Cmd.Parameters.Add(new OracleParameter("p_telefono", OracleDbType.Varchar2)).Value = proveedores.aTELEFONO;
