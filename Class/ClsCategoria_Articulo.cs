@@ -36,7 +36,7 @@ namespace DataLayer.Class
                 Cmd = new OracleCommand();
                 Cmd.Connection = conexion;
                 AbrirBaseDatos();
-                Cmd.CommandText = "package_supermercados.stp_mantenimiento_categoria_articulo";
+                Cmd.CommandText = "package_supermercados.stp_mantenimiento_categoria";
                 Cmd.CommandType = CommandType.StoredProcedure;
                 Cmd.Parameters.Add(new OracleParameter("p_codigo", OracleDbType.Varchar2)).Value = categoria_articulo.aCODIGO;
                 Cmd.Parameters.Add(new OracleParameter("p_descripcion", OracleDbType.Varchar2)).Value = categoria_articulo.aDESCRIPCION;
@@ -68,7 +68,7 @@ namespace DataLayer.Class
                 DtsCategoria_articulo.EnforceConstraints = false;
                 Cmd = new OracleCommand();
                 Cmd.Connection = conexion;
-                Cmd.CommandText = "package_supermercados.stp_mantenimiento_categoria_articulo";
+                Cmd.CommandText = "package_supermercados.stp_mantenimiento_categoria";
                 Cmd.CommandType = CommandType.StoredProcedure;
                 Cmd.Parameters.Add(new OracleParameter("p_codigo", OracleDbType.Varchar2)).Value = categoria_articulo.aCODIGO;
                 Cmd.Parameters.Add(new OracleParameter("p_descripcion", OracleDbType.Varchar2)).Value = categoria_articulo.aDESCRIPCION;
