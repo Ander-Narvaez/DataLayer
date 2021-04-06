@@ -41,7 +41,7 @@ namespace DataLayer.Class
                 Cmd.Parameters.Add(new OracleParameter("p_cedula", OracleDbType.Varchar2)).Value = clientes.aCEDULA;
                 Cmd.Parameters.Add(new OracleParameter("p_nombre", OracleDbType.Varchar2)).Value = clientes.aNOMBRE;
                 Cmd.Parameters.Add(new OracleParameter("p_apellido_1", OracleDbType.Varchar2)).Value = clientes.aAPELLIDO_1;
-                Cmd.Parameters.Add(new OracleParameter("p_apellido_2", OracleDbType.Int32)).Value = clientes.aAPELLIDO_2;
+                Cmd.Parameters.Add(new OracleParameter("p_apellido_2", OracleDbType.Varchar2)).Value = clientes.aAPELLIDO_2;
                 Cmd.Parameters.Add(new OracleParameter("p_accion", OracleDbType.Varchar2)).Value = pACCION;
                 Cmd.Parameters.Add(new OracleParameter("p_recordset", OracleDbType.RefCursor)).Direction = ParameterDirection.Output;
                 Cmd.ExecuteNonQuery();
