@@ -7,19 +7,22 @@ namespace DataLayer.Class
     public class ClsArticulo : ClsConexion
     {
         public String aARTICULO;
+        public String aNOMBRE_ARTICULO;
         public String aCATEGORIA;
         public Decimal aPRECIO;
 
         public ClsArticulo()
         {
             this.aARTICULO = "";
+            this.aNOMBRE_ARTICULO = "";
             this.aCATEGORIA = "";
             this.aPRECIO = 0 ;
         }
 
-        public ClsArticulo(string pARTICULO, String pCATEGORIA, Decimal pPRECIO)
+        public ClsArticulo(string pARTICULO, string pNOMBRE_ARTICULO, String pCATEGORIA, Decimal pPRECIO)
         {
             this.aARTICULO = pARTICULO;
+            this.aNOMBRE_ARTICULO = pNOMBRE_ARTICULO;
             this.aCATEGORIA = pCATEGORIA;
             this.aPRECIO = pPRECIO;
         }
@@ -36,6 +39,7 @@ namespace DataLayer.Class
                 Cmd.CommandText = "package_supermercados.stp_mantenimiento_articulo";
                 Cmd.CommandType = CommandType.StoredProcedure;
                 Cmd.Parameters.Add(new OracleParameter("p_articulo", OracleDbType.Varchar2)).Value = articulo.aARTICULO;
+                Cmd.Parameters.Add(new OracleParameter("p_nombre_articulo", OracleDbType.Varchar2)).Value = articulo.aNOMBRE_ARTICULO;
                 Cmd.Parameters.Add(new OracleParameter("p_categoria", OracleDbType.Varchar2)).Value = articulo.aCATEGORIA;
                 Cmd.Parameters.Add(new OracleParameter("p_precio", OracleDbType.Decimal)).Value = articulo.aPRECIO;
                 Cmd.Parameters.Add(new OracleParameter("p_accion", OracleDbType.Varchar2)).Value = pACCION;
@@ -68,6 +72,7 @@ namespace DataLayer.Class
                 Cmd.CommandText = "package_supermercados.stp_mantenimiento_articulo";
                 Cmd.CommandType = CommandType.StoredProcedure;
                 Cmd.Parameters.Add(new OracleParameter("p_articulo", OracleDbType.Varchar2)).Value = articulo.aARTICULO;
+                Cmd.Parameters.Add(new OracleParameter("p_nombre_articulo", OracleDbType.Varchar2)).Value = articulo.aNOMBRE_ARTICULO;
                 Cmd.Parameters.Add(new OracleParameter("p_categoria", OracleDbType.Varchar2)).Value = articulo.aCATEGORIA;
                 Cmd.Parameters.Add(new OracleParameter("p_precio", OracleDbType.Decimal)).Value = articulo.aPRECIO;
                 Cmd.Parameters.Add(new OracleParameter("p_accion", OracleDbType.Varchar2)).Value = pACCION;
