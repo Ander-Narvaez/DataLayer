@@ -47,7 +47,7 @@ namespace DataLayer.Class
                 Cmd.Parameters.Add(new OracleParameter("p_empresa", OracleDbType.Varchar2)).Value = bodega.aEMPRESA;
                 Cmd.Parameters.Add(new OracleParameter("p_sucursal", OracleDbType.Varchar2)).Value = bodega.aSUCURSAL;
                 Cmd.Parameters.Add(new OracleParameter("p_bodega", OracleDbType.Varchar2)).Value = bodega.aBODEGA;
-                Cmd.Parameters.Add(new OracleParameter("p_inventario", OracleDbType.Varchar2)).Value = bodega.aINVENTARIO;
+                Cmd.Parameters.Add(new OracleParameter("p_inventario", OracleDbType.Int32)).Value = bodega.aINVENTARIO;
                 Cmd.Parameters.Add(new OracleParameter("p_nombre", OracleDbType.Varchar2)).Value = bodega.aNOMBRE;
                 Cmd.Parameters.Add(new OracleParameter("p_ubicacion", OracleDbType.Varchar2)).Value = bodega.aUBICACION;
                 Cmd.Parameters.Add(new OracleParameter("p_accion", OracleDbType.Varchar2)).Value = pACCION;
@@ -82,7 +82,7 @@ namespace DataLayer.Class
                 Cmd.Parameters.Add(new OracleParameter("p_empresa", OracleDbType.Varchar2)).Value = bodega.aEMPRESA;
                 Cmd.Parameters.Add(new OracleParameter("p_sucursal", OracleDbType.Varchar2)).Value = bodega.aSUCURSAL;
                 Cmd.Parameters.Add(new OracleParameter("p_bodega", OracleDbType.Varchar2)).Value = bodega.aBODEGA;
-                Cmd.Parameters.Add(new OracleParameter("p_inventario", OracleDbType.Varchar2)).Value = bodega.aINVENTARIO;
+                Cmd.Parameters.Add(new OracleParameter("p_inventario", OracleDbType.Int32)).Value = bodega.aINVENTARIO;
                 Cmd.Parameters.Add(new OracleParameter("p_nombre", OracleDbType.Varchar2)).Value = bodega.aNOMBRE;
                 Cmd.Parameters.Add(new OracleParameter("p_ubicacion", OracleDbType.Varchar2)).Value = bodega.aUBICACION;
                 Cmd.Parameters.Add(new OracleParameter("p_accion", OracleDbType.Varchar2)).Value = pACCION;
