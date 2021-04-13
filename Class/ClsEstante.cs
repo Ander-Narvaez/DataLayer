@@ -45,7 +45,7 @@ namespace DataLayer.Class
                 Cmd = new OracleCommand();
                 Cmd.Connection = conexion;
                 AbrirBaseDatos();
-                Cmd.CommandText = "package_supermercados.stp_mantenimiento_Estante ";
+                Cmd.CommandText = "package_supermercados.stp_mantenimiento_estante";
                 Cmd.CommandType = CommandType.StoredProcedure;
                 Cmd.Parameters.Add(new OracleParameter("p_empresa", OracleDbType.Varchar2)).Value = estante.aEMPRESA;
                 Cmd.Parameters.Add(new OracleParameter("p_sucursal", OracleDbType.Varchar2)).Value = estante.aSUCURSAL;
@@ -80,7 +80,7 @@ namespace DataLayer.Class
                 DtsEstante.EnforceConstraints = false;
                 Cmd = new OracleCommand();
                 Cmd.Connection = conexion;
-                Cmd.CommandText = "package_supermercados.stp_estante";
+                Cmd.CommandText = "package_supermercados.stp_mantenimiento_estante";
                 Cmd.CommandType = CommandType.StoredProcedure;
                 Cmd.Parameters.Add(new OracleParameter("p_empresa", OracleDbType.Varchar2)).Value = estante.aEMPRESA;
                 Cmd.Parameters.Add(new OracleParameter("p_sucursal", OracleDbType.Varchar2)).Value = estante.aSUCURSAL;
